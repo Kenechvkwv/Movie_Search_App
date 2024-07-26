@@ -15,23 +15,21 @@ const MovieProvider = ({ children }) => {
             try {
                 const response = await fetch(url);
                 const data  = await response.json();
-                console.log(data);
                 setMovies(data.results);
-                setLoading(false);
             } catch (error) {
-                setError(error);
+                setError(error.message);
+            } finally {
                 setLoading(false);
             }
         };
         fetchData();
-        // console.log(fetchData())
     }, [url]);
 
     return (
-        <MovieContext.Provider value={movies}>
+        <MovieContext.Provider value={{ movies, loading, error }}>
             {children}
         </MovieContext.Provider>
-    )
+    );
 }
 
 export { MovieContext, MovieProvider };
