@@ -8,7 +8,7 @@ function Home() {
         <h1>
           Khali<span>FA</span>
         </h1>
-        <p>What do you want to watch? search for it!</p>
+        <p>What do you want to watch? Search for it!</p>
       </nav>
       <div className="search-area">
         <input type="search" placeholder="Search for a movie here" />
