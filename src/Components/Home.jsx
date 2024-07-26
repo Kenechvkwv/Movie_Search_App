@@ -11,7 +11,7 @@ function Home() {
         <p>What do you want to watch? Search for it!</p>
       </nav>
       <div className="search-area">
-        <input type="search" placeholder="Search for a movie here" />
+        <input type="search" placeholder="Search for a movie, TV show, documentary..." />
         <button>Search</button>
         <button>Add to Favorites</button>
         <button>Random Movie</button>

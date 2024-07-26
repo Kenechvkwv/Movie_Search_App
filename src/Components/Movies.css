@@ -97,6 +97,7 @@ button {
   transform: translateY(-5px);
 }
 
+
 .movie-list-container .movie-item h3 {
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -121,3 +122,4 @@ button {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
