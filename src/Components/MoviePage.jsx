@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MovieContext } from '../context/MovieContext';
 import "./Movies.css";
 
-function MoviePage({ movies }) {
+function MoviePage() {
+  const { movies, loading, error } = useContext(MovieContext);
+
+  if (loading) return <p>Loading...please wait</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <div className='movie-list-container'>
-      <h1>Movie List</h1>
-      {movies && movies.length > 0 ? (
+      <h1>Movie Clips</h1>
+      {movies.length > 0 ? (
         <div>
           {movies.map((movie) => (
-            <h3 key={movie.id}>{movie.name}</h3>
+            <div key={movie.id} className='movie-item'>
+              <h3>{movie.name}</h3>
+              {movie.site === 'YouTube' && (
+                <iframe
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${movie.key}`}
+                  title={movie.name}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
           ))}
         </div>
       ) : (
