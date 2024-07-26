@@ -74,4 +74,36 @@ button{
     align-items: center;
     border: 1px solid;
     width: 100%;
+    gap: 2rem;
+}
+
+.movie-page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 1rem;
+}
+
+.movie-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.movie-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.movie-title{
+    font-size: 1.2rem;
+    width: 15rem;
+    text-wrap: wrap;
+    line-height: 1.6rem;
 }
